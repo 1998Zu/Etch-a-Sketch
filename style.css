@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+#containerGrid{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black; 
+    height: 512px;
+    width: 512px;
+}
+
+.gridSquare {
+border: 1px solid #ccc;
+width: 30px;
+height: 30px;
+}
