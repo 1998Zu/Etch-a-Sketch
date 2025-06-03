@@ -19,6 +19,7 @@ button.onclick = function changeSize(){
         return;
     }
 
+        
 
     for (let i = 0; i < numberOfCopies; i++){
 
@@ -29,8 +30,22 @@ button.onclick = function changeSize(){
      clonedDiv.style.width = `${squareSize}px`;
      clonedDiv.style.height = `${squareSize}px`;
 
+     
+     
+
      clonedDiv.addEventListener("mouseover", function(){
-     clonedDiv.style.backgroundColor = "black";
+        let count = parseInt(clonedDiv.dataset.hoverCount) || 0; count++;
+        clonedDiv.dataset.hoverCount = count;
+
+        let opacity = count * 0.1;
+        if (opacity > 1) opacity = 1;
+
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);   
+        
+        clonedDiv.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+
 
      });
 
